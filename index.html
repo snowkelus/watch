@@ -1,33 +1,97 @@
 <html>
 	<head>
 		<title>Snowkelus Watch</title>
+		<style>
+			html,body{
+				Width:100vw;
+				Height:100vh;
+				Display:Inline-Block;
+				Overflow:Hidden;
+				Margin:0%;
+				Padding:0%;
+			}
+			body{
+				Background-Color:rgba(0,0,0,0.4);
+			}
+			div[ticker]{
+				Width:100%;
+				Height:Auto;
+				Display:Inline-Block;
+				Position:Absolute;
+				Top:0%;
+				Left:0%;
+				Right:0%;
+				Z-Index:-50;
+			}
+			div[box]{
+				Width:100%;
+				Height:100%;
+				Display:Inline-Flex;
+				Justify-Content:Center;
+				Align-Items:Center;
+				Text-Align:Center;
+				Position:Absolute;
+				Left:0%;
+				Right:0%;
+				Top:0%;
+				Bottom:0%;
+				Z-Index:-100;
+			}
+			div{
+				Margin:0%;
+				Padding:0%;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="tradingview-widget-container">
-			<div class="tradingview-widget-container__widget"></div>
-			<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-			{
-				"symbols": [
+		<div ticker>
+			<div class="tradingview-widget-container">
+				<div class="tradingview-widget-container__widget"></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 					{
-						"description": "USD to PHP",
-						"proName": "FX_IDC:USDPHP"
-					},
-					{
-						"description": "SGD to PHP",
-						"proName": "FX_IDC:SGDPHP"
-					},
-					{
-						"description": "EUR to PHP",
-						"proName": "FX_IDC:EURPHP"
+						"symbols": [
+							{
+								"description": "USD to PHP",
+								"proName": "FX_IDC:USDPHP"
+							},
+							{
+								"description": "SGD to PHP",
+								"proName": "FX_IDC:SGDPHP"
+							},
+							{
+								"description": "EUR to PHP",
+								"proName": "FX_IDC:EURPHP"
+							}
+						],
+						"showSymbolLogo": true,
+						"colorTheme": "light",
+						"isTransparent": false,
+						"displayMode": "regular",
+						"locale": "en"
 					}
-				],
-				"showSymbolLogo": true,
-				"colorTheme": "light",
-				"isTransparent": false,
-				"displayMode": "regular",
-				"locale": "en"
-			}
-			</script>
+					</script>
+				</div>
+			</div>
+		</div>
+		<div box>
+			<div class="tradingview-widget-container">
+				<div class="tradingview-widget-container__widget"></div>
+				<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+				{
+					"width": 770,
+					"height": 400,
+					"currencies": [
+						"EUR",
+						"USD",
+						"SGD",
+						"PHP"
+					],
+					"isTransparent": false,
+					"colorTheme": "light",
+					"locale": "en"
+				}
+				</script>
+			</div>
 		</div>
 	</body>
 </html>
